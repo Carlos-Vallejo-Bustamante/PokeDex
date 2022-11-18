@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  nginx:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: prodigiosovolcan
+    restart: always
+    ports:
+      - "9778:80"
+    volumes:
+      - ./dist/PokeDex:/usr/share/nginx/html/
+volumes:
+  html: {}

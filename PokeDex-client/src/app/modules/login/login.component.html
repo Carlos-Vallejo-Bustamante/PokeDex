@@ -1,0 +1,39 @@
+<div *ngIf="token == null" class="row my-3">
+  <div class="d-flex justify-content-center">
+    <div class="flex-column">
+      <button class="btn btn-dark mb-3" (click)="handlebutton()">Iniciar sesión con GOOGLE para ver Pokemons</button >
+      <div class="d-flex justify-content-center" id="buttonDiv"></div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="token == null" class="row">
+  <P class="text-center">ó</P>
+  <div class="col-md-4 mx-auto">
+    <div class="card bg-dark text-white">
+      <div class="card-header">
+          Iniciar sesión
+      </div>
+        <div class="card-body">
+            <form (submit)="signIn()">
+                <div class="form-group mb-3">
+                    <input type="text" [(ngModel)]="user.email" name="email" class="form-control" placeholder="Email" required autofocus>
+                </div>
+                <div class="form-group mb-3">
+                    <input type="password" [(ngModel)]="user.password" name="password" class="form-control" placeholder="Password" required>
+                </div>
+                <button class="btn btn-success btn-block me-5">
+                    Iniciar
+                </button>
+                <span class="me-2">Aún no tienes cuenta</span><a class="text-success" routerLink="/signup" routerLinkActive="active">Registrate</a>
+                <p class="text-center mt-3 text-danger" *ngIf="error">{{error}}</p>
+            </form>
+        </div>
+    </div>
+  </div>
+</div>
+      
+
+
+
